@@ -1,19 +1,41 @@
 <template>
   <div id="app">
     <Header />
-    <RoundButtons />
+    <RoundButtons @changeRound="changeRound($event)" />
+    <Round class="round-1" v-show="round === 1" />
+    <Round class="round-2"  v-show="round === 2" />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Header from './components/Header'
 import RoundButtons from './components/RoundButtons';
+import Round from './components/Round'
 
 export default {
   name: 'App',
   components: {
     Header,
-    RoundButtons
+    RoundButtons,
+    Round
+  },
+  data: function() {
+    return {
+      round: 1
+    }
+  },
+  methods: {
+    changeRound: function(val) {
+      console.log("Round Changed");
+      if(val === 'round-1') {
+        console.log("Loading Round 1");
+        this.round = 1
+      } else {
+        console.log("Loading Round 2");
+        this.round = 2;
+      }
+    }
+
   }
 }
 </script>
@@ -23,7 +45,15 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 body {
-  background: linear-gradient(120.15deg, #EC7A08 -24.83%, #FF8080 83.82%);
+  background: -moz-linear-gradient(326deg, rgba(236,122,8,1) 0%, rgba(236,122,8,1) 0%, rgba(255,128,128,1) 65%, rgba(255,128,128,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(236,122,8,1)), color-stop(0%, rgba(236,122,8,1)), color-stop(65%, rgba(255,128,128,1)), color-stop(100%, rgba(255,128,128,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(326deg, rgba(236,122,8,1) 0%, rgba(236,122,8,1) 0%, rgba(255,128,128,1) 65%, rgba(255,128,128,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(326deg, rgba(236,122,8,1) 0%, rgba(236,122,8,1) 0%, rgba(255,128,128,1) 65%, rgba(255,128,128,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(326deg, rgba(236,122,8,1) 0%, rgba(236,122,8,1) 0%, rgba(255,128,128,1) 65%, rgba(255,128,128,1) 100%); /* ie10+ */
+  background: linear-gradient(124deg, rgba(236,122,8,1) 0%, rgba(236,122,8,1) 0%, rgba(255,128,128,1) 65%, rgba(255,128,128,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec7a08', endColorstr='#ff8080',GradientType=1 ); /* ie6-9 */
+
+  height: 96vh;
 }
 
 * {
@@ -38,7 +68,7 @@ body {
   margin: 15px 20px 0;
 
   @media (min-width: $breakpoint-tablet) {
-    width: 300px;
+    width: 350px;
     margin: 30px auto;
   }
 

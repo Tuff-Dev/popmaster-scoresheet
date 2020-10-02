@@ -25,5 +25,8 @@
 
   h2 {
     font-size: 1.5em;
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 2.4em;
+    }
   }
 </style>

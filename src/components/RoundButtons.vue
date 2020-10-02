@@ -26,6 +26,9 @@ export default {
                 document.querySelector('.btn.round-1').classList.remove('active');
                 document.querySelector('.btn.round-2').classList.add('active');
             }
+
+            console.log("Emitting Round Change");
+            this.$emit('changeRound', this.activeButton);
         }
     }
 }
@@ -33,8 +36,15 @@ export default {
 
 <style lang="scss">
 .round-buttons {
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
+    padding-bottom: 10px;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 1.5em;
+        margin: 20px auto;
+    }
+    
 
     .round-buttons__button {
         display: inline;
@@ -69,6 +79,7 @@ export default {
             &:hover:not(.active) {
                 top: 1px;
                 background-color: #92465d;
+                box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
             }
 
         }
