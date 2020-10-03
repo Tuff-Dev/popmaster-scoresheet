@@ -1,9 +1,11 @@
 <template>
+
   <div id="app">
+    <Menu @clearRounds="clearRounds()"  :menuOpen="menuOpen" />
     <Header />
     <RoundButtons @changeRound="changeRound($event)" />
-    <Round class="round-1" v-show="round === 1" />
-    <Round class="round-2"  v-show="round === 2" />
+    <Round class="round-1" v-show="round === 1" :key="round1Key"/>
+    <Round class="round-2"  v-show="round === 2" :key="round2Key"/>
   </div>
 </template>
 
@@ -11,31 +13,44 @@
 import Header from './components/Header'
 import RoundButtons from './components/RoundButtons';
 import Round from './components/Round'
+import Menu from './components/Menu';
 
 export default {
   name: 'App',
   components: {
     Header,
     RoundButtons,
-    Round
+    Round,
+    Menu
   },
   data: function() {
     return {
-      round: 1
+      round: 1,
+      menuOpen: false,
+      round1Key: 0,
+      round2Key: 100
     }
   },
   methods: {
     changeRound: function(val) {
-      console.log("Round Changed");
       if(val === 'round-1') {
-        console.log("Loading Round 1");
         this.round = 1
       } else {
-        console.log("Loading Round 2");
         this.round = 2;
       }
+    },
+    clearRounds: function() {
+      // Force re-render on round components
+      this.round1Key += 1;
+      this.round2Key += 1;
+      // Set active round to 1
+      this.changeRound('round-1');
+      // Close Menu
+      this.menuOpen = false;
     }
-
+  },
+  created: function() {
+    console.log("Load from localStorage");
   }
 }
 </script>
@@ -56,8 +71,27 @@ body {
   height: 96vh;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: blueviolet;
+  }
+
+  &:visited {
+    color: white;
+  }
+}
+
 * {
   font-family: 'Roboto', sans-serif;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 #app {
@@ -71,7 +105,6 @@ body {
     width: 350px;
     margin: 30px auto;
   }
-
 }
 
 .light-text {

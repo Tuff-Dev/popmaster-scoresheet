@@ -61,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 
     .question {
-        font-size: 1.6em;
+        font-size: 1.4em;
         padding: 5px 0;
 
         @media (min-width: $breakpoint-tablet) {

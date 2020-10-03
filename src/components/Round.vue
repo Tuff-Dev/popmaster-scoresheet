@@ -31,7 +31,6 @@ export default {
             if(this.currentQuestionNumber < 10) {
                 this.currentQuestionNumber = this.scores.length + 1; 
             }
-            
         }
     }
 }
@@ -46,7 +45,7 @@ export default {
         background: rgba(255, 255, 255, 0.25);
         border-radius: 10px;
         width: 70%;
-        height: 405px;
+        height: 370px;
         margin: 5px auto 0;
         padding-top: 10px;
 

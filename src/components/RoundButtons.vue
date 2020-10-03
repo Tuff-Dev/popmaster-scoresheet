@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
 export default {
     data: function() {
         return {
@@ -26,8 +27,6 @@ export default {
                 document.querySelector('.btn.round-1').classList.remove('active');
                 document.querySelector('.btn.round-2').classList.add('active');
             }
-
-            console.log("Emitting Round Change");
             this.$emit('changeRound', this.activeButton);
         }
     }
