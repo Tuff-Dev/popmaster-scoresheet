@@ -35,12 +35,12 @@ export default {
         background: rgba(255, 255, 255, 0.25);
         border-radius: 10px;
         width: 70%;
-        height: 370px;
+        height: 380px;
         margin: 5px auto 0;
         padding-top: 10px;
         -webkit-box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
--moz-box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
-box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
+        -moz-box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
+        box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
 
         @media (min-width: $breakpoint-tablet) {
             width: 100%;

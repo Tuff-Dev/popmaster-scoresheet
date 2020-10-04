@@ -30,7 +30,9 @@ export default {
     .question {
         font-size: 1.4em;
         padding: 5px 0;
-
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        width: 80%;
         @media (min-width: $breakpoint-tablet) {
             font-size: 2.2em;
         }

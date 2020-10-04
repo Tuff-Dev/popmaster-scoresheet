@@ -126,7 +126,11 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec7a08', endColorstr='#ff8080',GradientType=1 ); /* ie6-9 */
 
   height: 100vh;
-  min-height: 850px;
+  min-height: 575px;
+  @media (min-width: $breakpoint-tablet) {
+    min-height: 850px;
+  }
+  
 }
 
 a {

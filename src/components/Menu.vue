@@ -9,6 +9,11 @@
           </li>
         </ul>
 
+        <div class="instructions">
+          <p>Popmaster Online Scoresheet. Simply click/press the questions to toggle if you have answered the question correctly.</p>
+          <p>* Bonus Question</p>
+        </div>
+
       </div>
     </div>
 </template>
@@ -136,6 +141,21 @@ export default {
           }
         }
       }
+
+      div.instructions {
+        margin-top: 100px;
+        font-weight: 300;
+        padding: 0 20px;
+
+        @media (min-width: $breakpoint-tablet) {
+          margin-top: 150px;
+          font-size: 1.4em;
+          padding: 0 50px;
+        }
+
+
+      }
+
     }
   }
 </style>
