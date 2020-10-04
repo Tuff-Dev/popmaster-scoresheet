@@ -125,7 +125,8 @@ body {
   background: linear-gradient(124deg, rgba(236,122,8,1) 0%, rgba(236,122,8,1) 0%, rgba(255,128,128,1) 65%, rgba(255,128,128,1) 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec7a08', endColorstr='#ff8080',GradientType=1 ); /* ie6-9 */
 
-  height: 100%;
+  height: 100vh;
+  min-height: 850px;
 }
 
 a {
