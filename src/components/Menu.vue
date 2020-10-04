@@ -138,6 +138,9 @@ export default {
             line-height: 50px;
             font-weight: 700;
             white-space: nowrap;
+            &:hover {
+              color:#000000
+            }
           }
         }
       }
