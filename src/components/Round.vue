@@ -2,45 +2,35 @@
   <div class="scorecard">
       <div class="scorecard__panel">
             <div class="scorecard_line-splitter"></div>
-            <Question v-for="n in currentQuestionNumber" :questionNumber="n" v-bind:key="n"  @scoreChanged="scoreChanged(n-1, $event)" />
+            <Question v-for="(question, index) in roundData.questions" :question="question" v-bind:key="index"  @scoreupdated="scoreUpdated()" />
       </div>
-      <div class="scorecard__total">Total: <strong>{{ totalScore }}</strong></div>
+      <div class="scorecard__total">Total: <strong>{{ roundData.totalScore }}</strong></div>
   </div>
   
 </template>
 
 <script>
 import Question from './Question';
+import RoundData from '../models/RoundData';
 
 export default {
     components: {
         Question
     },
-    data: function() {
-        return {
-            currentQuestionNumber: 1,
-            scores: [0],
-            totalScore: 0
-        }
+    props: {
+        roundData: RoundData
     },
     methods: {
-        scoreChanged: function(n, val) {
-            this.scores[n] = val;
-            const reducer = (accumulator, currentValue) => accumulator + currentValue;
-            this.totalScore = this.scores.reduce(reducer);
-            if(this.currentQuestionNumber < 10) {
-                this.currentQuestionNumber = this.scores.length + 1; 
-            }
+        scoreUpdated: function() {
+            // Update total round score.
+            this.roundData.updateTotal();
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-
 .scorecard {
-
-
     .scorecard__panel {
         background: rgba(255, 255, 255, 0.25);
         border-radius: 10px;
@@ -48,6 +38,9 @@ export default {
         height: 370px;
         margin: 5px auto 0;
         padding-top: 10px;
+        -webkit-box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
+-moz-box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
+box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
 
         @media (min-width: $breakpoint-tablet) {
             width: 100%;
