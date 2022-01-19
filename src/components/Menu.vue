@@ -65,7 +65,7 @@ export default {
     background: rgba(71, 0, 17, 0.65);
     border-bottom-right-radius: 10px;
 
-    @media (min-width: $breakpoint-tablet) {
+    @media (min-width: 500px) {
       width: 90px;
       height: 90px;
     }
@@ -89,7 +89,7 @@ export default {
       // margin-left: 16px;
       font-size: 20px;
       float: left;
-      @media (min-width: $breakpoint-tablet) {
+      @media (min-width: 500px) {
         font-size: 50px;
         // margin-left: 33px;
         max-width: 90px;
@@ -103,7 +103,7 @@ export default {
 
       svg {
         padding-top: 8px;
-        @media (min-width: $breakpoint-tablet) {
+        @media (min-width: 500px) {
           padding-top: 18px;
         }
       }
@@ -113,7 +113,7 @@ export default {
       margin-top: 100px;
       color: white;
 
-      @media (min-width: $breakpoint-tablet) {
+      @media (min-width: 500px) {
         margin-top: 200px;
       }
 
@@ -123,7 +123,7 @@ export default {
         padding: 0;
         font-size: 1.5em;
 
-        @media (min-width: $breakpoint-tablet) {
+        @media (min-width: 500px) {
           font-size: 2em;
         }
 
@@ -150,7 +150,7 @@ export default {
         font-weight: 300;
         padding: 0 20px;
 
-        @media (min-width: $breakpoint-tablet) {
+        @media (min-width: 500px) {
           margin-top: 150px;
           font-size: 1.4em;
           padding: 0 50px;

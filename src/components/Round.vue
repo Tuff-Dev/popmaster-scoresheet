@@ -42,7 +42,7 @@ export default {
         -moz-box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
         box-shadow: 2px 3px 12px 0px rgba(0,0,0,0.39);
 
-        @media (min-width: $breakpoint-tablet) {
+        @media (min-width: 500px) {
             width: 100%;
             height: 530px;
         }
@@ -64,7 +64,7 @@ export default {
         width: 50%;
         margin: 10px auto 0;
 
-        @media (min-width: $breakpoint-tablet) {
+        @media (min-width: 500px) {
             font-size: 2.5em;
         }
 
