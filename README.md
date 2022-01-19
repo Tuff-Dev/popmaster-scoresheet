@@ -1,4 +1,4 @@
-# popmaster-scorecard
+# popmaster
 
 ## Project setup
 ```

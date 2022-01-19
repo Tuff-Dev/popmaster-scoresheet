@@ -33,7 +33,7 @@ export default {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         margin: 0 auto;
         width: 80%;
-        @media (min-width: $breakpoint-tablet) {
+        @media (min-width: 500px) {
             font-size: 2.2em;
         }
 

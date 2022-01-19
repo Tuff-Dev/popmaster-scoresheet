@@ -127,7 +127,7 @@ body {
 
   height: 100vh;
   min-height: 575px;
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: 500px) {
     min-height: 850px;
   }
   
@@ -163,7 +163,7 @@ a {
   color: #2c3e50;
   margin: 15px 20px 0;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: 500px) {
     width: 350px;
     margin: 30px auto;
   }

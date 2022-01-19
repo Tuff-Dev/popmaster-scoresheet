@@ -39,7 +39,7 @@ export default {
     margin: 0 auto;
     padding-bottom: 10px;
 
-    @media (min-width: $breakpoint-tablet) {
+    @media (min-width: 500px) {
         font-size: 1.5em;
         margin: 20px auto;
     }
